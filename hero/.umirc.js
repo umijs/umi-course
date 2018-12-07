@@ -15,4 +15,11 @@ export default {
       hardSource: false,
     }],
   ],
+  "proxy": {
+    "/api": {
+      "target": "https://pvp.qq.com/web201605/js/",
+      "changeOrigin": false,
+      "pathRewrite": { "^/api" : "" }
+    }
+  }
 }

@@ -1,3 +1,5 @@
+import request from '../utils/request';
+
 export default {
   state: {
     heros: [],
@@ -23,7 +25,8 @@ export default {
   },
   effects: {
     *fetch({ type, payload }, { put, call, select }) {
-      const data = [
+      const data = yield request('/api/herolist.json');
+      const localData = [
         {
           ename: 105,
           cname: '廉颇',
@@ -44,7 +47,7 @@ export default {
       yield put({
         type: 'save',
         payload: {
-          heros: data,
+          heros: data||localData,
         },
       });
     },
