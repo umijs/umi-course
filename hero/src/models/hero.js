@@ -25,7 +25,16 @@ export default {
   },
   effects: {
     *fetch({ type, payload }, { put, call, select }) {
-      const data = yield request('/api/herolist.json');
+      const data = yield request('/api/herodetails.json', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json; charset=utf-8',
+        },
+        body: JSON.stringify({
+          ename: 110,
+        }),
+      });
       const localData = [
         {
           ename: 105,
@@ -47,7 +56,7 @@ export default {
       yield put({
         type: 'save',
         payload: {
-          heros: data||localData,
+          heros: data || localData,
         },
       });
     },
