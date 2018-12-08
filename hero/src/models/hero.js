@@ -16,9 +16,6 @@ export default {
     },
   },
   reducers: {
-    update(state) {
-      return `${state}_hero`;
-    },
     save(state, action) {
       return { ...state, ...action.payload };
     },
