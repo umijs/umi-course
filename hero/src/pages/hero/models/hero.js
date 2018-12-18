@@ -3,6 +3,7 @@ import { queryHeroList, getHeroDetails } from 'services/api';
 export default {
   state: {
     heros: [],
+    filterKey:0
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -25,7 +26,6 @@ export default {
       const herolist = yield call(queryHeroList);
       const herodetails = yield call(getHeroDetails, { ename: 110 });
       console.log(herodetails);
-
       yield put({
         type: 'save',
         payload: {
