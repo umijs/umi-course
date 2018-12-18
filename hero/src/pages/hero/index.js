@@ -1,6 +1,8 @@
-import styles from './hero.css';
+import styles from './index.css';
 import { connect } from 'dva';  
-function Hero(props) {         
+function Hero(props) { 
+  console.log(props);
+          
   return (
     <div className={styles.normal}>
       <h1>Page hero</h1>

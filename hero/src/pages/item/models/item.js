@@ -1,4 +1,4 @@
-import { queryItem } from '../services/api';
+import { queryItem } from 'services/api';
 
 export default {
   state: {
