@@ -34,7 +34,7 @@ function BasicLayout(props) {
       <Content style={{ padding: '0 50px' }}>
         <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>{children}</div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>Umi 入门教程 Created by xiaohuoni</Footer>
+      <Footer style={{ textAlign: 'center' }}>Umi 入门教程 Created by <a href="https://github.com/xiaohuoni" target="_Blank" >xiaohuoni</a></Footer>
     </Layout>
   );
 }
