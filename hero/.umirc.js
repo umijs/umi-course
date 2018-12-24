@@ -13,8 +13,11 @@ export default {
         dll: false,
         routes: {
           exclude: [
-            //这里注释，有关系吗？
-            /models\//
+            /model\.(j|t)sx?$/,
+            /service\.(j|t)sx?$/,
+            /models\//,
+            /components\//,
+            /services\//,
           ],
         },
         hardSource: false,
