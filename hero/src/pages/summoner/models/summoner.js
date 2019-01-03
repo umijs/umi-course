@@ -1,5 +1,5 @@
 import { querySummoner} from 'services/api';
-
+import summonerjson from '../../../../mock/summoner.json';
 export default {
   state: {
     summoner: [],
@@ -22,7 +22,7 @@ export default {
   },
   effects: {
     *fetch({ type, payload }, { put, call, select }) {
-      const summoner = yield call(querySummoner);
+      const summoner = summonerjson;
 
       yield put({
         type: 'save',

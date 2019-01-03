@@ -1,5 +1,5 @@
 import { queryHeroList, getHeroDetails, getFreeHeros } from 'services/api';
-
+import herolistjson from '../../../../mock/herolist.json';
 export default {
   state: {
     heros: [],
@@ -25,9 +25,22 @@ export default {
   },
   effects: {
     *fetch({ type, payload }, { put, call, select }) {
-      const herolist = yield call(queryHeroList);
-      const herodetails = yield call(getHeroDetails, { ename: 110 });
-      const freeheros = yield call(getFreeHeros, { number: 13 });
+      const herolist = herolistjson;
+      function getRandomArrayElements(arr, count) {
+        var shuffled = arr.slice(0),
+          i = arr.length,
+          min = i - count,
+          temp,
+          index;
+        while (i-- > min) {
+          index = Math.floor((i + 1) * Math.random());
+          temp = shuffled[index];
+          shuffled[index] = shuffled[i];
+          shuffled[i] = temp;
+        }
+        return shuffled.slice(min);
+      }
+      const freeheros = getRandomArrayElements(herolistjson, 13);
       yield put({
         type: 'save',
         payload: {

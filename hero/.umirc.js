@@ -22,8 +22,10 @@ export default {
         },
         hardSource: false,
       },
-    ],
+    ], 'umi-plugin-gh-pages',
   ],
+  base: '/umi-course/',
+  publicPath: '/umi-course/',
   alias: {
     utils: path.resolve(__dirname, 'src/utils'),
     services: path.resolve(__dirname, 'src/services'),
